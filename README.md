@@ -2,7 +2,7 @@
 
 ![](https://github.com/iiiytn1k/IMG-1-02/blob/master/KDPV.jpg?raw=true)
 
-### IMG102_badapple_328p_test_image_(mono, 4 colors, 8 colors)_328p
+### IMG102_test_image_(mono, 4_colors, 8_colors)_328p
 
 Simple programs for show static images on IMG-1-02 plasma display by AVR Atmega328p microcontroller. All folders have a python script for convert images to byte array.
 Usage ex.:
