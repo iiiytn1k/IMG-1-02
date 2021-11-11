@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "rcc.h": "c",
+        "splash_screen.h": "c",
+        "usart.h": "c",
+        "string.h": "c"
+    }
+}

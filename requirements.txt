@@ -1,0 +1,6 @@
+dearpygui==1.0.2
+mss==6.1.0
+numba==0.53.1
+numpy==1.19.2
+opencv_python==4.4.0.44
+pyserial==3.5
