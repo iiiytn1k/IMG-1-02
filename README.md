@@ -20,7 +20,7 @@ How to use:
 
 ### IMG102_UART_Display 
 
-A python program sends the captured screen over UART to the STM32F103C8 microcontroller, then that data is displayed on IMG-1-02 display. 
+A python program sends the captured screen over UART to the STM32F103C8 microcontroller, then that data is displayed on IMG-1-02 display with 4-colors pallete. 
 
 How to use:
 1. Compile the firmware and flash the microcontroller.
