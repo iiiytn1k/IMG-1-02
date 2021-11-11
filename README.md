@@ -10,7 +10,7 @@ Usage ex.:
 
 ### IMG102_badapple_328p
 
-A python script sends the video over UART to the AVR Atmega328p microcontroller, then that data is displayed on IMG-1-02 display. 
+A python script sends the video file over UART to the AVR Atmega328p microcontroller, then that data is displayed on IMG-1-02 display. 
 
 How to use:
 1. Compile the firmware and flash the microcontroller 
@@ -30,7 +30,7 @@ How to use:
 
 ### Hardware
 
-Project for Diptrace
+Diptrace project  
 
 ### Demo:
 1. https://youtu.be/T3mTXGTW0yQ
