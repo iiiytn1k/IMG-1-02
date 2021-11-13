@@ -36,3 +36,6 @@ Diptrace project
 ### Demo:
 1. https://youtu.be/T3mTXGTW0yQ
 2. https://youtu.be/3Jo3hTLaMUs
+
+### Bad Apple!! 60fps source:
+https://youtu.be/d-eAoSNUy1E
