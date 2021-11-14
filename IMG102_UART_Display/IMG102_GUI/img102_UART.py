@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import serial
+import time
 from mss import mss
 from image_utils import *
 
@@ -30,7 +31,7 @@ class UART_send_data_thread():
 
         raw_frame = np.zeros((100 * 2, 104), dtype=np.uint8)
         output_byte_array = np.zeros(int(raw_frame.shape[0] * raw_frame.shape[1] // 8), dtype=np.uint8)
-
+        t = time.time()
         while True:
             while not self.startflag:
                 pass
@@ -73,3 +74,6 @@ class UART_send_data_thread():
 
                 # Send byte array via UART:
                 UART.write(bytearray(output_byte_array))
+                delta = time.time() - t
+                if delta < 0.015: time.sleep(0.015 - delta)
+                t = time.time()
