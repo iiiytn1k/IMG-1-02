@@ -13,6 +13,17 @@ bayer8x8 = 1/64 * (np.array([
             [42, 26, 38, 22, 41, 25, 37, 21]
         ]))
 
+row_count = np.array([153,  25, 233, 105, 169,  41, 201,  73, 137,   9,\
+                      145,  17, 225,  97, 161,  33, 193,  65, 129,   1,\
+                      158,  30, 238, 110, 174,  46, 206,  78, 142,  14,\
+                      150,  22, 230, 102, 166,  38, 198,  70, 134,   6,\
+                      154,  26, 234, 106, 170,  42, 202,  74, 138,  10,\
+                      146,  18, 226,  98, 162,  34, 194,  66, 130,   2,\
+                      156,  28, 236, 108, 172,  44, 204,  76, 140,  12,\
+                      148,  20, 228, 100, 164,  36, 196,  68, 132,   4,\
+                      152,  24, 232, 104, 168,  40, 200,  72, 136,   8,\
+                      144,  16, 224,  96, 160,  32, 192,  64, 128,   0])
+
 
 # Find closest color value in 4-colors palette range (0,85,170,255)
 @njit(cache=True)
@@ -162,6 +173,7 @@ def img_to_raw_frame(input_img, output_frame):
 @njit(cache=True)
 def raw_frame_to_byte_array(raw_frame, output_byte_array):
     index = 0
+    row_number = 0
     for y in range(0, raw_frame.shape[0]):
         for x in range(0,  raw_frame.shape[1], 8):
             byte = 0
@@ -169,6 +181,11 @@ def raw_frame_to_byte_array(raw_frame, output_byte_array):
                 byte += raw_frame[y][x+offset] * (128 >> offset)
             output_byte_array[index] = ~byte
             index += 1
+        output_byte_array[index] = row_count[row_number]
+        index += 1
+        row_number += 1
+        if row_number > 99:
+            row_number = 0
 
 
 def brightness_contrast_correction(input_img, brightness, contrast):

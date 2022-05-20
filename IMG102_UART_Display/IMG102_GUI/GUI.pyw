@@ -47,6 +47,9 @@ def open_port_button_callback():
     else:
         UART.port = ui.get_value('port_combo')
         UART.baudrate = ui.get_value('baudselect_combo')
+        UART.write_timeout = 0
+        UART.rtscts = False
+        UART.dsrdtr = False
         try:
             UART.open()
         except:
